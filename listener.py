@@ -10,8 +10,13 @@ server = Flask(__name__)
 f = "%Y/%m/%d/%H/%M/%S"
 
 
-@bot.message_handler(commands=['/start', '/help', '/rus_ct', '/math_ct', '/phys_ct'])
-def start(message):
+#@bot.message_handler(commands=['/start', '/help', '/rus_ct', '/math_ct', '/phys_ct'])
+#def start(message):
+
+
+
+@bot.message_handler(func=lambda message: True, content_types=['text'])
+def echo_message(message):
     rus_ct = datetime.datetime.strptime("2019/6/13/11/0/0", f) #CT Date is variative, please re-check at rikc.by
     phys_ct = datetime.datetime.strptime("2019/6/25/11/0/0",f)
     math_ct = datetime.datetime.strptime("2020/6/17/11/0/0",f)
@@ -179,11 +184,8 @@ def start(message):
             pass
         
         bot.reply_to(message, send)
-
-
-@bot.message_handler(func=lambda message: True, content_types=['text'])
-def echo_message(message):
-    bot.reply_to(message, message.text)
+    else:
+         bot.reply_to(message, 'Неизвестная команда, напишите /help для отображения списка команд.')
 
 
 @server.route('/' + TOKEN, methods=['POST'])
