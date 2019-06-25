@@ -10,20 +10,15 @@ server = Flask(__name__)
 f = "%Y/%m/%d/%H/%M/%S"
 
 
-#@bot.message_handler(commands=['/start', '/help', '/rus_ct', '/math_ct', '/phys_ct'])
-#def start(message):
-
-
-
-@bot.message_handler(func=lambda message: True, content_types=['text'])
-def echo_message(message):
+@bot.message_handler(commands=['/start', '/help', '/rus_ct', '/math_ct', '/phys_ct'])
+def start(message):
     rus_ct = datetime.datetime.strptime("2019/6/13/11/0/0", f) #CT Date is variative, please re-check at rikc.by
     phys_ct = datetime.datetime.strptime("2019/6/25/11/0/0",f)
     math_ct = datetime.datetime.strptime("2020/6/17/11/0/0",f)
     cur_time = datetime.datetime.now()
-    if message.text == '/start' or message.text =='/help':
-        bot.reply_to(message.text, "/rus_ct - отображение оставшегося времени до начала ЦТ по предмету 'Русский язык'.\n/math_ct - отображение оставшегося времени до начала ЦТ по предмету 'Математика'.\n/phys_ct - отображение оставшегося времени до начала ЦТ по предмету 'Физика'.\n/help - отображение списка доступных команд.\n")
-    elif message.text == '/phys_ct':
+    if message == '/start' or message =='/help':
+        bot.reply_to(message, "/rus_ct - отображение оставшегося времени до начала ЦТ по предмету 'Русский язык'.\n/math_ct - отображение оставшегося времени до начала ЦТ по предмету 'Математика'.\n/phys_ct - отображение оставшегося времени до начала ЦТ по предмету 'Физика'.\n/help - отображение списка доступных команд.\n")
+    elif message == '/phys_ct':
         yleft = RD(phys_ct, cur_time).years
         Mleft = RD(phys_ct, cur_time).months
         dleft = RD(phys_ct, cur_time).days
@@ -76,7 +71,7 @@ def echo_message(message):
             send += str(sleft) + " секунд "
         else:
             pass
-    elif message.text == '/math_ct':
+    elif message == '/math_ct':
         yleft = RD(math_ct, cur_time).years
         Mleft = RD(math_ct, cur_time).months
         dleft = RD(math_ct, cur_time).days
@@ -129,7 +124,7 @@ def echo_message(message):
             send += str(sleft) + " секунд "
         else:
             pass
-    elif message.text == '/rus_ct':
+    elif message == '/rus_ct':
         yleft = RD(rus_ct, cur_time).years
         Mleft = RD(rus_ct, cur_time).months
         dleft = RD(rus_ct, cur_time).days
@@ -183,9 +178,12 @@ def echo_message(message):
         else:
             pass
         
-        bot.reply_to(message.text, send)
-    else:
-         bot.reply_to(message.text, 'Неизвестная команда, напишите /help для отображения списка команд.')
+        bot.reply_to(message, send)
+
+
+@bot.message_handler(func=lambda message: True, content_types=['text'])
+def echo_message(message):
+    bot.reply_to(message, message.text)
 
 
 @server.route('/' + TOKEN, methods=['POST'])
