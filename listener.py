@@ -192,14 +192,6 @@ def getMessage():
     return "!", 200
 
 
-@server.route("/")
-def webhook():
-    bot.remove_webhook()
-    bot.set_webhook(url='https://audev-telegram.herokuapp.com/' + TOKEN)
-    return "!", 200
-
-
 if __name__ == "__main__":
     server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
-
-webhook()
+    bot.polling(none_stop=True)
