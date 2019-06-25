@@ -17,7 +17,7 @@ def start(message):
     math_ct = datetime.datetime.strptime("2020/6/17/11/0/0",f)
     cur_time = datetime.datetime.now()
     if message == '/start' or message =='/help':
-        bot.reply_to(message, '/rus_ct - отображение оставшегося времени до начала ЦТ по предмету "Русский язык".\n/math_ct - отображение оставшегося времени до начала ЦТ по предмету 'Математика'.\n/phys_ct - отображение оставшегося времени до начала ЦТ по предмету 'Физика'.\n/help - отображение списка доступных команд.\n/info - информация о боте.')
+        bot.reply_to(message, "/rus_ct - отображение оставшегося времени до начала ЦТ по предмету 'Русский язык'.\n/math_ct - отображение оставшегося времени до начала ЦТ по предмету 'Математика'.\n/phys_ct - отображение оставшегося времени до начала ЦТ по предмету 'Физика'.\n/help - отображение списка доступных команд.\n")
     elif message == '/phys_ct':
         yleft = RD(phys_ct, cur_time).years
         Mleft = RD(phys_ct, cur_time).months
@@ -178,7 +178,7 @@ def start(message):
         else:
             pass
         
-    bot.reply_to(message, send)
+        bot.reply_to(message, send)
 
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
