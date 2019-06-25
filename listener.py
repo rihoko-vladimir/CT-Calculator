@@ -21,9 +21,9 @@ def echo_message(message):
     phys_ct = datetime.datetime.strptime("2019/6/25/11/0/0",f)
     math_ct = datetime.datetime.strptime("2020/6/17/11/0/0",f)
     cur_time = datetime.datetime.now()
-    if message == '/start' or message =='/help':
-        bot.reply_to(message, "/rus_ct - отображение оставшегося времени до начала ЦТ по предмету 'Русский язык'.\n/math_ct - отображение оставшегося времени до начала ЦТ по предмету 'Математика'.\n/phys_ct - отображение оставшегося времени до начала ЦТ по предмету 'Физика'.\n/help - отображение списка доступных команд.\n")
-    elif message == '/phys_ct':
+    if message.text == '/start' or message.text =='/help':
+        bot.reply_to(message.text, "/rus_ct - отображение оставшегося времени до начала ЦТ по предмету 'Русский язык'.\n/math_ct - отображение оставшегося времени до начала ЦТ по предмету 'Математика'.\n/phys_ct - отображение оставшегося времени до начала ЦТ по предмету 'Физика'.\n/help - отображение списка доступных команд.\n")
+    elif message.text == '/phys_ct':
         yleft = RD(phys_ct, cur_time).years
         Mleft = RD(phys_ct, cur_time).months
         dleft = RD(phys_ct, cur_time).days
@@ -76,7 +76,7 @@ def echo_message(message):
             send += str(sleft) + " секунд "
         else:
             pass
-    elif message == '/math_ct':
+    elif message.text == '/math_ct':
         yleft = RD(math_ct, cur_time).years
         Mleft = RD(math_ct, cur_time).months
         dleft = RD(math_ct, cur_time).days
@@ -129,7 +129,7 @@ def echo_message(message):
             send += str(sleft) + " секунд "
         else:
             pass
-    elif message == '/rus_ct':
+    elif message.text == '/rus_ct':
         yleft = RD(rus_ct, cur_time).years
         Mleft = RD(rus_ct, cur_time).months
         dleft = RD(rus_ct, cur_time).days
@@ -183,9 +183,9 @@ def echo_message(message):
         else:
             pass
         
-        bot.reply_to(message, send)
+        bot.reply_to(message.text, send)
     else:
-         bot.reply_to(message, 'Неизвестная команда, напишите /help для отображения списка команд.')
+         bot.reply_to(message.text, 'Неизвестная команда, напишите /help для отображения списка команд.')
 
 
 @server.route('/' + TOKEN, methods=['POST'])
