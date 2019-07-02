@@ -15,7 +15,7 @@ by_hist_ct = datetime.strptime("2020/6/27/11/0/0", f)
 geo_ct = datetime.strptime("2020/6/29/11/0/0", f)
 hist_ct = datetime.strptime("2020/7/1/11/0/0", f)
 def calculate(message):
-    cur_time = datetime.now()
+    cur_time = datetime.now(timezone.utc)
     if message == '/phys_ct':
         yleft = RD(phys_ct, cur_time).years
         Mleft = RD(phys_ct, cur_time).months
