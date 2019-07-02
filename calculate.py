@@ -56,11 +56,21 @@ def calculate(message):
         else:
             pass
         if mleft != 0:
-            send += str(mleft) + " минут "
+            if mleft % 10 == 1 and mleft != 11:
+                send += str(mleft) + " минута "
+            elif (mleft % 10 == 3 and mleft != 13) or (mleft % 10 == 4 and mleft != 14) or (mleft % 10 == 2 and mleft != 12) :
+                send += str(mleft) + " минуты "
+            else:
+                send += str(mleft) + " минут "
         else:
             pass
         if sleft != 0:
-            send += str(sleft) + " секунд "
+            if sleft % 10 == 1 and sleft != 11:
+                send += str(sleft) + " секунда "
+            elif (sleft % 10 == 3 and sleft != 13) or (sleft % 10 == 4 and sleft != 14) or (sleft % 10 == 2 and sleft != 12) :
+                send += str(sleft) + " секунды "
+            else:
+                send += str(sleft) + " секунд "
         else:
             pass
     elif message == '/math_ct':
@@ -109,11 +119,21 @@ def calculate(message):
         else:
             pass
         if mleft != 0:
-            send += str(mleft) + " минут "
+            if mleft % 10 == 1 and mleft != 11:
+                send += str(mleft) + " минута "
+            elif (mleft % 10 == 3 and mleft != 13) or (mleft % 10 == 4 and mleft != 14) or (mleft % 10 == 2 and mleft != 12) :
+                send += str(mleft) + " минуты "
+            else:
+                send += str(mleft) + " минут "
         else:
             pass
         if sleft != 0:
-            send += str(sleft) + " секунд "
+            if sleft % 10 == 1 and sleft != 11:
+                send += str(sleft) + " секунда "
+            elif (sleft % 10 == 3 and sleft != 13) or (sleft % 10 == 4 and sleft != 14) or (sleft % 10 == 2 and sleft != 12) :
+                send += str(sleft) + " секунды "
+            else:
+                send += str(sleft) + " секунд "
         else:
             pass
     elif message == '/rus_ct':
@@ -162,14 +182,24 @@ def calculate(message):
         else:
             pass
         if mleft != 0:
-            send += str(mleft) + " минут "
+            if mleft % 10 == 1 and mleft != 11:
+                send += str(mleft) + " минута "
+            elif (mleft % 10 == 3 and mleft != 13) or (mleft % 10 == 4 and mleft != 14) or (mleft % 10 == 2 and mleft != 12) :
+                send += str(mleft) + " минуты "
+            else:
+                send += str(mleft) + " минут "
         else:
             pass
         if sleft != 0:
-            send += str(sleft) + " секунд "
+            if sleft % 10 == 1 and sleft != 11:
+                send += str(sleft) + " секунда "
+            elif (sleft % 10 == 3 and sleft != 13) or (sleft % 10 == 4 and sleft != 14) or (sleft % 10 == 2 and sleft != 12) :
+                send += str(sleft) + " секунды "
+            else:
+                send += str(sleft) + " секунд "
         else:
             pass
     else:
         send = "Неизвестная команда. Напишие /help для вывода списка доступных команд.\n"
     return send
-print(calculate('/phys_ct'))
+print(calculate('/math_ct'))
