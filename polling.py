@@ -44,7 +44,7 @@ def inct(message):
 @bot.message_handler(func=lambda message: message.text.lower() == 'цт по географии' and message.content_type == 'text')
 def geoct(message):
     bot.reply_to(message, calculate.calculate("/geo_ct"))
-@bot.message_handler(func=lambda message: message.text.lower() == 'цт по всемирной Истории' and message.content_type == 'text')
+@bot.message_handler(func=lambda message: message.text.lower() == 'цт по всемирной истории' and message.content_type == 'text')
 def histct(message):
     bot.reply_to(message, calculate.calculate("/hist_ct"))
 @bot.message_handler(func=lambda message: message.text.lower() == 'цт по химии' and message.content_type == 'text')
