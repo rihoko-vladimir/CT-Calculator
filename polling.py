@@ -33,25 +33,25 @@ def physct(message):
 def byct(message):
     bot.reply_to(message, calculate.calculate("/by_ct"))
 @bot.message_handler(func=lambda message: message.text == 'ЦТ по Обществоведению' and message.content_type == 'text')
-def physct(message):
+def obsct(message):
     bot.reply_to(message, calculate.calculate("/com_ct"))
 @bot.message_handler(func=lambda message: message.text == 'ЦТ по Биологии' and message.content_type == 'text')
-def physct(message):
+def biosct(message):
     bot.reply_to(message, calculate.calculate("/bio_ct"))
 @bot.message_handler(func=lambda message: message.text == 'ЦТ по Иностранному языку' and message.content_type == 'text')
-def physct(message):
+def inct(message):
     bot.reply_to(message, calculate.calculate("/forlang_ct"))
 @bot.message_handler(func=lambda message: message.text == 'ЦТ по Географии' and message.content_type == 'text')
-def physct(message):
+def geoct(message):
     bot.reply_to(message, calculate.calculate("/geo_ct"))
 @bot.message_handler(func=lambda message: message.text == 'ЦТ по Всемирной Истории' and message.content_type == 'text')
-def physct(message):
+def histct(message):
     bot.reply_to(message, calculate.calculate("/hist_ct"))
 @bot.message_handler(func=lambda message: message.text == 'ЦТ по Химии' and message.content_type == 'text')
-def physct(message):
+def chemct(message):
     bot.reply_to(message, calculate.calculate("/chem_ct"))
 @bot.message_handler(func=lambda message: message.text == 'ЦТ по Истории Беларуси' and message.content_type == 'text')
-def physct(message):
+def by_histct(message):
     bot.reply_to(message, calculate.calculate("/by_hist_ct"))
 
 @bot.message_handler(func=lambda message: True)
