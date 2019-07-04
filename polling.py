@@ -1,5 +1,5 @@
 import telebot
-import calculate
+import datetime_calculate
 from telebot import types
 
 bot = telebot.TeleBot("874051136:AAEdDsh0b89rAKmqKx0dH4mcPlJSWI_4Te8")
@@ -22,37 +22,37 @@ def send_welcome(message):
     bot.reply_to(message, "Привет! Вот список доступных команд.", reply_markup=markup)
 @bot.message_handler(func=lambda message: message.text.lower() == 'цт по русскому языку' and message.content_type == 'text')
 def rusct(message):
-    bot.reply_to(message, calculate.calculate("/rus_ct"))
+    bot.reply_to(message, datetime_calculate.calculate("rus_ct"))
 @bot.message_handler(func=lambda message: message.text.lower() == 'цт по математике' and message.content_type == 'text')
 def mathct(message):
-    bot.reply_to(message, calculate.calculate("/math_ct"))
+    bot.reply_to(message, datetime_calculate.calculate("math_ct"))
 @bot.message_handler(func=lambda message: message.text.lower() == 'цт по физике' and message.content_type == 'text')
 def physct(message):
-    bot.reply_to(message, calculate.calculate("/phys_ct"))
+    bot.reply_to(message, datetime_calculate.calculate("phys_ct"))
 @bot.message_handler(func=lambda message: message.text.lower() == 'цт по белорусскому языку' and message.content_type == 'text')
 def byct(message):
-    bot.reply_to(message, calculate.calculate("/by_ct"))
+    bot.reply_to(message, datetime_calculate.calculate("by_ct"))
 @bot.message_handler(func=lambda message: message.text.lower() == 'цт по обществоведению' and message.content_type == 'text')
 def obsct(message):
-    bot.reply_to(message, calculate.calculate("/com_ct"))
+    bot.reply_to(message, datetime_calculate.calculate("com_ct"))
 @bot.message_handler(func=lambda message: message.text.lower() == 'цт по биологии' and message.content_type == 'text')
 def biosct(message):
-    bot.reply_to(message, calculate.calculate("/bio_ct"))
+    bot.reply_to(message, datetime_calculate.calculate("bio_ct"))
 @bot.message_handler(func=lambda message: message.text.lower() == 'цт по иностранному языку' and message.content_type == 'text')
 def inct(message):
-    bot.reply_to(message, calculate.calculate("/forlang_ct"))
+    bot.reply_to(message, datetime_calculate.calculate("forlang_ct"))
 @bot.message_handler(func=lambda message: message.text.lower() == 'цт по географии' and message.content_type == 'text')
 def geoct(message):
-    bot.reply_to(message, calculate.calculate("/geo_ct"))
+    bot.reply_to(message, datetime_calculate.calculate("geo_ct"))
 @bot.message_handler(func=lambda message: message.text.lower() == 'цт по всемирной истории' and message.content_type == 'text')
 def histct(message):
-    bot.reply_to(message, calculate.calculate("/hist_ct"))
+    bot.reply_to(message, datetime_calculate.calculate("hist_ct"))
 @bot.message_handler(func=lambda message: message.text.lower() == 'цт по химии' and message.content_type == 'text')
 def chemct(message):
-    bot.reply_to(message, calculate.calculate("/chem_ct"))
+    bot.reply_to(message, datetime_calculate.calculate("chem_ct"))
 @bot.message_handler(func=lambda message: message.text.lower() == 'цт по истории беларуси' and message.content_type == 'text')
 def by_histct(message):
-    bot.reply_to(message, calculate.calculate("/by_hist_ct"))
+    bot.reply_to(message, datetime_calculate.calculate("by_hist_ct"))
 
 @bot.message_handler(func=lambda message: True)
 def notacom(message):
