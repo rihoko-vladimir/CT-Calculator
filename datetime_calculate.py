@@ -2,17 +2,17 @@ from datetime import datetime, timezone
 from dateutil.relativedelta import relativedelta as RD
 f = "%Y/%m/%d/%H/%M/%S"
 ct_date = {
-            "rus_ct" : datetime.strptime("2020/6/13/11/0/0", f), #CT Date is variative, please re-check at rikc.by
-            "phys_ct" : datetime.strptime("2020/6/25/11/0/0", f),
-            "math_ct" : datetime.strptime("2020/6/17/11/0/0", f),
-            "by_ct" : datetime.strptime("2020/6/11/11/0/0", f),
-            "com_ct" : datetime.strptime("2020/6/15/11/0/0", f),
-            "bio_ct" : datetime.strptime("2020/6/19/11/0/0", f),
-            "forlang_ct" : datetime.strptime("2020/6/21/11/0/0", f),
-            "chem_ct" : datetime.strptime("2020/6/23/11/0/0", f),
-            "by_hist_ct" : datetime.strptime("2020/6/27/11/0/0", f),
-            "geo_ct" : datetime.strptime("2020/6/29/11/0/0", f),
-            "hist_ct" : datetime.strptime("2020/7/1/11/0/0", f)}
+            "rus_ct" : datetime.strptime("2020/6/15/11/0/0", f), #CT Date is variative, please re-check at rikc.by
+            "phys_ct" : datetime.strptime("2020/6/27/11/0/0", f),
+            "math_ct" : datetime.strptime("2020/6/19/11/0/0", f),
+            "by_ct" : datetime.strptime("2020/6/13/11/0/0", f),
+            "com_ct" : datetime.strptime("2020/6/17/11/0/0", f),
+            "bio_ct" : datetime.strptime("2020/6/21/11/0/0", f),
+            "forlang_ct" : datetime.strptime("2020/6/23/11/0/0", f),
+            "chem_ct" : datetime.strptime("2020/6/25/11/0/0", f),
+            "by_hist_ct" : datetime.strptime("2020/6/29/11/0/0", f),
+            "geo_ct" : datetime.strptime("2020/7/1/11/0/0", f),
+            "hist_ct" : datetime.strptime("2020/7/4/11/0/0", f)}
 template = {"main" : "До ЦТ по %s осталось ",
             "rus_ct" : "русскому языку",
             "phys_ct" : "физике",
